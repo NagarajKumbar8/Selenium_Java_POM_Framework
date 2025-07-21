@@ -6,12 +6,24 @@
   </listeners>
 
   <test thread-count="4" name="Test_run">
+    
+    <groups>
+    	<run>
+    	<!--<include name="smoke"></include>-->
+    	<exclude name="Smoke"></exclude>
+    	
+    	</run>
+    
+    </groups>
+    
     <classes>
       <class name="pom_Tests.Search_Test"/>
       <class name="pom_Tests.Login_Test"/>
       <class name="base_test.base_test"/>
       <class name="pom_Tests.Register_Test"/>
     </classes>
+    
+    
     
   </test> <!-- Test_run -->
 </suite> <!-- Suite -->

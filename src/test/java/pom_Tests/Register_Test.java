@@ -38,7 +38,7 @@ public class Register_Test extends base_test{
 		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, groups="Smoke")
 	public void registerWithAllFields() {
 		
 		Home_Page homePage = new Home_Page(driver);
