@@ -18,7 +18,7 @@ public class Search_Test extends base_test{
 
 	
 	
-	@Test(priority=1)
+	@Test(priority=1) //, dependsOnMethods="loginWithValidCrendetials")
 	public void searchWithValidProductName() {
 		
 		Home_Page homePage = new Home_Page(driver);

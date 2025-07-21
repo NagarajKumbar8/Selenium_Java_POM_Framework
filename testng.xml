@@ -5,12 +5,13 @@
     <listener class-name="listeners.My_Listeners" />
   </listeners>
 
-  <test thread-count="5" name="Test_run">
+  <test thread-count="4" name="Test_run">
     <classes>
       <class name="pom_Tests.Search_Test"/>
       <class name="pom_Tests.Login_Test"/>
       <class name="base_test.base_test"/>
       <class name="pom_Tests.Register_Test"/>
     </classes>
+    
   </test> <!-- Test_run -->
 </suite> <!-- Suite -->

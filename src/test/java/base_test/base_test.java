@@ -13,7 +13,7 @@ public class base_test  {
 	public WebDriver driver;
 	
 	
-	@BeforeMethod(alwaysRun=true)
+	@BeforeMethod
 	public WebDriver setup() throws IOException {
 
 		driver = Base_Class.initializeBrowser();
@@ -22,7 +22,7 @@ public class base_test  {
 	}
 	 
 	
-	@AfterMethod(alwaysRun=true)
+	@AfterMethod
 	public void tearDown() {
 		
 		driver.quit();
