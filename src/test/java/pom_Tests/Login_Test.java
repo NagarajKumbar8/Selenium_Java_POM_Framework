@@ -19,8 +19,6 @@ import base_test.base_test;
 
 public class Login_Test extends base_test{
 
-public WebDriver driver;
-
 
 	
 	@Test(priority=1)
@@ -50,20 +48,7 @@ public WebDriver driver;
 	
 	}
 	
-	@BeforeMethod
-	public void setup() throws IOException {
-
-		driver = Base_Class.initializeBrowser();
-		driver.get(Base_Class.prop.getProperty("url"));
-		
-	}
-	 
 	
-	@AfterMethod
-	public void tearDown() {
-		
-		driver.quit();
-	} 
 
 	
 }

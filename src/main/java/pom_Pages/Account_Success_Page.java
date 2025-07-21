@@ -5,12 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Account_Success_Page  {
+import utilities.Utils;
+
+public class Account_Success_Page extends Utils {
 
 	WebDriver driver;
 
 	public Account_Success_Page(WebDriver driver) {
 		
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		
