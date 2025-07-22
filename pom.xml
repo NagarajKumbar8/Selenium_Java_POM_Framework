@@ -49,7 +49,10 @@
     
   </dependencies>
   
-  <build>
+  <profiles>
+ 	<profile>
+ 	<id>run_all</id>
+ 	<build>
   <plugins>
     <!-- Compiler Plugin -->
     <plugin>
@@ -67,12 +70,107 @@
       <version>2.22.1</version>
       <configuration>
         <suiteXmlFiles>
-          <suiteXmlFile>testng.xml</suiteXmlFile>
+          <suiteXmlFile>xml_files/run_all.xml</suiteXmlFile>
         </suiteXmlFiles>
       </configuration>
     </plugin>
   </plugins>
 </build>
 
+ 	
+ 	</profile>
+ 	
+ 	<profile>
+ 	<id>smoke</id>
+ 	<build>
+  <plugins>
+    <!-- Compiler Plugin -->
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.8.0</version>
+      <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+      </configuration>
+    </plugin>
+
+    <!-- Surefire Plugin for TestNG -->
+    <plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.22.1</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>xml_files/smoke.xml</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+
+ 
+ 	</profile>
+ 	
+ 	<profile>
+ 	<id >functional</id>
+	<build>
+  <plugins>
+    <!-- Compiler Plugin -->
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.8.0</version>
+      <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+      </configuration>
+    </plugin>
+
+    <!-- Surefire Plugin for TestNG -->
+    <plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.22.1</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>xml_files/functional.xml</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+ 	
+
+ 	</profile>
+ 	
+  </profiles>
+  
+  
+  <!--<build>
+  <plugins>
+     Compiler Plugin 
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.8.0</version>
+      <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+      </configuration>
+    </plugin>
+
+     Surefire Plugin for TestNG 
+    <plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.22.1</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>testng.xml</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+-->
+
+
+<!--mvn clean test -P smoke-->
+<!--mvn clean test -P smoke-->
   
 </project>

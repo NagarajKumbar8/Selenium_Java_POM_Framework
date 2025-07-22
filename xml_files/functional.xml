@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    
+    <groups>
+			<run>
+				<include name="Functional"></include>
+				<!--<exclude name="Smoke"></exclude>-->
+			</run>
+		</groups>
+    
+    <classes>
+      <class name="pom_Tests.Search_Test"/>
+      <class name="base_test.base_test"/>
+      <class name="pom_Tests.Login_Test"/>
+      <class name="pom_Tests.Register_Test"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,27 +1,22 @@
 package pom_Tests;
 
-import java.io.IOException;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.sun.net.httpserver.Authenticator.Retry;
 
 import base_test.base_test;
 import pom_Pages.Account_Page;
 import pom_Pages.Home_Page;
 import pom_Pages.Login_Page;
 import utilities.Base_Class;
-import utilities.Utils;
-import base_test.base_test;
+ 
 
 public class Login_Test extends base_test{
 
 
 	
-	@Test(priority=1)
+	@Test(groups="Smoke")
 	public void loginWithValidCrendetials() {
 	
 		Home_Page homePage = new Home_Page(driver);
@@ -34,7 +29,7 @@ public class Login_Test extends base_test{
 
 	}
 	
-	@Test(priority=2)
+	@Test(groups="Smoke", retryAnalyzer=listeners.Retry.class)
 	public void loginWithInvalidCredentials() {
 	
 		Home_Page homePage = new Home_Page(driver);

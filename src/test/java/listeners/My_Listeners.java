@@ -1,7 +1,5 @@
 package listeners;
 
-import java.lang.reflect.Field;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -20,25 +18,28 @@ public class My_Listeners extends base_test implements ITestListener {
 
 	ExtentReports extentReport = ExtentReporter.getExtentReport();
 	ExtentTest extentTest;
+	
+	ThreadLocal<ExtentTest> extentT=new ThreadLocal<ExtentTest>(); // thread safe 
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		
-		extentTest = extentReport.createTest(result.getName());
-		
+		extentTest = extentReport.createTest(result.getMethod().getMethodName());
+		extentT.set(extentTest);  //unique thread ID
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		
-		extentTest.log(Status.PASS,"Test Passed");
+		extentT.get().log(Status.PASS,"Test Passed");
+		//extentTest.log(Status.PASS,"Test Passed");
 		
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		
-		extentTest.fail(result.getThrowable());
+		extentT.get().fail(result.getThrowable());
 		
 		 WebDriver driver = null;
 		 
@@ -46,9 +47,16 @@ public class My_Listeners extends base_test implements ITestListener {
 		 
 		 
 		 try {
-			    Field field = result.getTestClass().getRealClass().getDeclaredField("driver");
-			    field.setAccessible(true); // Allow access to private field
-			    driver = (WebDriver) field.get(result.getInstance());
+			 
+			 driver =(WebDriver) result.getTestClass().getRealClass().getField("driver")
+					 .get(result.getInstance());
+			 		 
+				/*
+				 * Field field =
+				 * result.getTestClass().getRealClass().getDeclaredField("driver");
+				 * field.setAccessible(true); // Allow access to private field driver =
+				 * (WebDriver) field.get(result.getInstance());
+				 */
 			} catch (Exception e1) {
 			    e1.printStackTrace();
 			}
@@ -57,7 +65,7 @@ public class My_Listeners extends base_test implements ITestListener {
 		 try {
 			 
 			String screenshotPath = Utils.takeScreenshot(testName,driver);
-			extentTest.addScreenCaptureFromPath(screenshotPath, testName);
+			extentT.get().addScreenCaptureFromPath(screenshotPath, testName); 
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite  name="Suite"> 
+ 
+	<listeners>
+		<listener class-name="listeners.My_Listeners" />
+	</listeners>
+
+	<test thread-count="4" name="Search_Test">
+		<groups>
+			<run>
+				<!--<include name="Smoke"></include>-->
+				<!--<exclude name="Smoke"></exclude>-->
+			</run>
+		</groups>
+
+		<classes>
+			<class name="pom_Tests.Search_Test" />
+		</classes>
+	</test> 
+
+	<test thread-count="4" name="Login_Test">
+		<classes>
+			<class name="pom_Tests.Login_Test" />
+		</classes>
+	</test>
+
+	<test thread-count="4" name="base_test">
+		<classes>
+			<class name="base_test.base_test" />
+		</classes>
+	</test>
+
+	<test thread-count="4" name="Register_Test">
+		<classes>
+			<class name="pom_Tests.Register_Test" />
+		</classes>
+	</test>
+
+</suite> 

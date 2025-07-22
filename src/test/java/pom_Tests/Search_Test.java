@@ -18,7 +18,7 @@ public class Search_Test extends base_test{
 
 	
 	
-	@Test(priority=1, groups="Functional") //, dependsOnMethods="loginWithValidCrendetials")
+	@Test(groups="Functional") //, dependsOnMethods="loginWithValidCrendetials")
 	public void searchWithValidProductName() {
 		
 		Home_Page homePage = new Home_Page(driver);
@@ -29,7 +29,7 @@ public class Search_Test extends base_test{
 
 	}
 	
-	@Test(priority=2, groups="Functional")
+	@Test(groups="Functional")
 	public void searchWithInvalidProductName() {
 		Home_Page homePage = new Home_Page(driver);
 		homePage.enterSearchTextIntoSearchField(Base_Class.prop.getProperty("nonexistingproduct"));
@@ -39,7 +39,7 @@ public class Search_Test extends base_test{
 	
 	}
 	
-	@Test(priority=3, groups="Functional")
+	@Test(groups="Functional")
 	public void searchByNotProvidingAnyProductName() {
 		
 		Home_Page homePage = new Home_Page(driver);
