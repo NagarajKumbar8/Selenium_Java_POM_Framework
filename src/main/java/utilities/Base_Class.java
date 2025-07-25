@@ -41,9 +41,8 @@ public static  Properties prop;
 			
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions option=new ChromeOptions();
-			option.addArguments("--incognito, --disable-notifictions");
-			option.addArguments("--ignore-certificate-errors");
-			//option.addArguments("--headless");
+			option.addArguments("--incognito");
+			//option.addArguments("--ignore-certificate-errors, --disable-notifictions");
 			driver = new ChromeDriver(option);
 			
 		}else if(browser.equals("firefox")) {
