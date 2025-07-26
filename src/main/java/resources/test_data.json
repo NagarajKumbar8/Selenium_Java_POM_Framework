@@ -1,0 +1,14 @@
+[
+	{
+		"validemail" : "nagaraj2225@gmail.com",
+		"validpassword" : "@Nag123"
+		
+	}
+	
+	/*
+	validemail=nagaraj2225@gmail.com
+	invalidemail=na@gmail.com
+	validpassword=@Nag123
+	*/
+	
+]
