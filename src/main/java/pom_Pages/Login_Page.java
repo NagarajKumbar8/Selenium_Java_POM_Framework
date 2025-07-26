@@ -18,7 +18,6 @@ public class Login_Page extends Utils {
 		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this );
-
 	}
 
 	@FindBy(id="input-email")
