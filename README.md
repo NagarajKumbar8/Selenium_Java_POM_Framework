@@ -1,21 +1,8 @@
-Selenium Java POM Framework
+**Selenium Java POM Framework**
 A Maven‑based Selenium automation framework built using the Page Object Model (POM) design pattern, TestNG, and Java. This framework enables clean separation of test logic and UI page interactions.
 
-🧠 Key Features
+🧠 **Key Features**
 Page Object Model (POM): Clear structure separating locators, page actions, and tests.
-youtube.com
-+5
-youtube.com
-+5
-youtube.com
-+5
-youtube.com
-+7
-medium.com
-+7
-github.com
-+7
-
 Selenium WebDriver with Java
 
 TestNG as the testing framework
@@ -31,7 +18,7 @@ Logging & Reporting (e.g., TestNG reports or ExtentReports)
 Designed for easy enhancement and scalability
 
 
-Run the tests
+R**un the tests**
 Run all tests (default):
 
 bash
@@ -50,7 +37,8 @@ bash
 Copy
 Edit
 mvn test -P smoke
-🧪 TestNG Suite Configuration
+
+🧪 **TestNG Suite Configuration**
 The main suite file is located at src/test/resources/testng.xml and includes your test classes for execution.
 
 Example:
@@ -68,7 +56,7 @@ Edit
 </suite>
 Ensure your test classes and packages align correctly with entries in testng.xml.
 
-📄 Handling Test Data
+📄 **Handling Test Data**
 Test data is stored outside the code—e.g., in JSON files such as:
 
 bash
@@ -77,7 +65,7 @@ Edit
 src/test/resources/test_data.json
 You can parse it using Jackson ObjectMapper and map the content via TypeReference<List<HashMap<String, String>>>.
 
-🧩 Project Utilities
+🧩 **Project Utilities**
 Driver Factory: Centralized WebDriver instantiation (Chrome, Firefox, etc.)
 
 Base Test Class: Handles setup (@BeforeClass) and teardown (@AfterClass) logic
@@ -86,7 +74,7 @@ Page Object Classes: Each page class encapsulates page-specific elements and act
 
 Utility Classes: Helpers for file operations, JSON parsing, waits, screenshots, and logging
 
-✅ Best Practices
+✅ **Best Practices**
 Maintain naming consistency between package names and testng.xml
 
 Clean build frequently using mvn clean test to avoid stale artifacts
