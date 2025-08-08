@@ -24,7 +24,7 @@ public class base_test  {
 	
 	@AfterMethod(alwaysRun=true)
 	public void tearDown() {
-		
+		driver.close();
 		driver.quit();
 	} 
 	

@@ -21,9 +21,7 @@ public class Utils {
 		PageFactory.initElements(driver, this );
 
 	}
-	
-
-	
+		
 	  public static String generateNewEmailTimeStamp() {
 	  
 	  Date date = new Date(); return
