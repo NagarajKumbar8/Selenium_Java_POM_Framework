@@ -62,7 +62,7 @@ public class Login_Test extends base_test{
 		map1.put("invalidpassword", "@112");
 		
 		
-		return new Object[][] {{map}};
+		return new Object[][] {{map},{map1}};
 	}
 	
 	/*

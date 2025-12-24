@@ -179,5 +179,6 @@
 
 <!--mvn clean test -P smoke-->
 <!--mvn clean test -P smoke-->
+<!--java -jar Jenkins.war - -httpPort=9090-->
   
 </project>
